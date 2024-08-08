@@ -13,10 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.todosalau.reto2chat.model.LoginModel;
 import com.todosalau.reto2chat.presenter.LoginPresenter;
 import com.todosalau.reto2chat.view.LoginContract;
+
 
 /**
  * Esta clase representa la actividad de inicio de sesión de la aplicación.
@@ -27,6 +31,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     private EditText editTextPassword;
     private Button btnLogin;
     private TextView registerText;
+    private ImageView backgroundImageView;
 
     // Presentador
     private LoginPresenter presenter;
@@ -36,6 +41,12 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
+
+        // Iniciar el efecto de movimiento de fondo
+        backgroundImageView = findViewById(R.id.backgroundImageView);
+        Animation backgroundAnimation = AnimationUtils.loadAnimation(this, R.anim.background_move);
+        backgroundImageView.startAnimation(backgroundAnimation);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -101,5 +112,22 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (backgroundImageView != null) {
+            backgroundImageView.clearAnimation();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (backgroundImageView != null) {
+            Animation backgroundAnimation = AnimationUtils.loadAnimation(this, R.anim.background_move);
+            backgroundImageView.startAnimation(backgroundAnimation);
+        }
     }
 }

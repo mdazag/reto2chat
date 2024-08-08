@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Reto2Chat</string>
+    <string name="app_name">Reto 2: Chat</string>
 
     <!-- Textos de la vista Chat -->
     <string name="chat_header_image_desc">Imagen de encabezado</string>
@@ -44,4 +44,9 @@
     <string name="name_user">Nombre del usuario</string>
     <string name="email_user">Correo del usuario</string>
     <string name="chat_button">Chatear</string>
+
+    <!-- Vista de menú-->
+    <string name="nav_chat">Chat</string>
+    <string name="nav_users">Usuarios</string>
+    <string name="nav_logout">Cerrar sesión</string>
 </resources>

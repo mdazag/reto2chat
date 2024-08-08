@@ -7,6 +7,8 @@ android {
     namespace = "com.todosalau.reto2chat"
     compileSdk = 34
 
+
+
     defaultConfig {
         applicationId = "com.todosalau.reto2chat"
         minSdk = 33
@@ -31,6 +33,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
 

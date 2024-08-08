@@ -50,7 +50,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <EditText
                 android:id="@+id/searchEmailEditText"
@@ -58,13 +59,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/chat_email_hint"
                 android:inputType="textEmailAddress"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:padding="8dp" />
 
             <Button
                 android:id="@+id/searchUserButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/chat_search_button" />
+                android:text="@string/chat_search_button"
+                android:backgroundTint="@color/blue" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -76,6 +80,7 @@
         android:layout_margin="16dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/grey"
         app:layout_constraintTop_toBottomOf="@id/listviewBuscarUsuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -95,7 +100,7 @@
         android:textStyle="bold"
         android:textSize="24dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/listViewChatUsuarios"
+                app:layout_constraintBottom_toTopOf="@+id/listViewChatUsuarios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listviewUsuarios" />
@@ -141,14 +146,17 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:hint="@string/chat_message_hint"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp" />
 
         <!-- Botón para enviar mensaje -->
         <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chat_send_button" />
+            android:text="@string/chat_send_button"
+            android:backgroundTint="@color/blue" />
     </LinearLayout>
 
     <!-- ImageView de pie de página -->
