@@ -110,7 +110,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     private MessageModel createMessageModel(UserModel user, String messageText) {
         String messageId = UUID.randomUUID().toString();
         String senderId = user.getUserId();
-        String senderName = user.getName();
+        String senderName = view.getCurrentUserModelName();
         String senderEmail = user.getEmail();
         Date timestamp = new Date(); // O utiliza FieldValue.serverTimestamp() si prefieres que Firestore establezca la marca de tiempo
         return new MessageModel(messageId, messageText, senderId, senderName, timestamp, senderEmail);
