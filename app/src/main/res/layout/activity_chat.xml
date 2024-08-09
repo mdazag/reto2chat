@@ -88,7 +88,8 @@
         <ListView
             android:id="@+id/usersListView"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            android:background="@drawable/headerandfooter" />
     </androidx.cardview.widget.CardView>
 
     <!-- CardView para mostrar las conversaciones -->
@@ -121,7 +122,8 @@
         <ListView
             android:id="@+id/conversationsListView"
             android:layout_width="match_parent"
-            android:layout_height="195dp" />
+            android:layout_height="195dp"
+            android:background="@drawable/headerandfooteralpha"/>
     </androidx.cardview.widget.CardView>
 
     <!-- Layout para el campo de entrada de mensaje y el botón de enviar -->

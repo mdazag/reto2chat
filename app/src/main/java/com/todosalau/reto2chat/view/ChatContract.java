@@ -18,4 +18,10 @@ public interface ChatContract {
      * Muestra una confirmación de que el mensaje ha sido enviado correctamente.
      */
     void showMessageSentConfirmation();
+
+    /**
+     * Recupera el nombre del usuario actual
+     * @return Nombre del userModel actual
+     */
+    String getCurrentUserModelName();
 }

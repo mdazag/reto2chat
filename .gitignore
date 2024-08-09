@@ -31,3 +31,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+local.properties
+gradle/libs.versions.toml
+gradle/libs.versions.toml

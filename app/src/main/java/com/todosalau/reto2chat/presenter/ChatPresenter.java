@@ -14,4 +14,6 @@ public interface ChatPresenter {
     // @param user1 El primer usuario
     // @param user2 El segundo usuario
     void sendMessage(String messageText, UserModel user1, UserModel user2);
+
+
 }

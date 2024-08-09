@@ -59,6 +59,7 @@ public class ChatActivity extends AppCompatActivity implements UserListContract,
     private List<UserModel> usersList = new ArrayList<>();
     private UserModel user1;
     private UserModel user2;
+    private UserModel currUserModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +140,16 @@ public class ChatActivity extends AppCompatActivity implements UserListContract,
     }
 
     @Override
+    public String getCurrenUserMail() {
+        return currentUser.getEmail();
+    }
+
+    @Override
+    public String getCurrentUserModelName() {
+        return currUserModel.getName();
+    }
+
+    @Override
     public void displayUsers(List<UserModel> users) {
         // Guardar la lista de usuarios cargados
         usersList = users;
@@ -150,6 +161,11 @@ public class ChatActivity extends AppCompatActivity implements UserListContract,
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void setCurrUserModel(UserModel userModel) {
+        currUserModel = userModel;
+    }
+
     /**
      * Método para buscar usuarios por correo electrónico.
      */
@@ -159,7 +175,8 @@ public class ChatActivity extends AppCompatActivity implements UserListContract,
 
         // Buscar usuarios cuyo correo coincida con el correo ingresado
         for (UserModel user : usersList) {
-            if (user.getEmail().equalsIgnoreCase(emailToSearch)) {
+            //if (user.getEmail().equalsIgnoreCase(emailToSearch)) {
+            if (user.getEmail().startsWith(emailToSearch)) {
                 foundUsers.add(user);
             }
         }

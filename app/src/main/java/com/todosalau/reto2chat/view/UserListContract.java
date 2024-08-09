@@ -21,4 +21,18 @@ public interface UserListContract {
      * @param message Mensaje de error a mostrar.
      */
     void showError(String message);
+
+    void setCurrUserModel(UserModel userModel);
+
+    /**
+     * Recupera el email del usuario logueado
+     * @return El correo electronico del usuario logueado
+     */
+    String getCurrenUserMail();
+
+    /**
+     * Recupera el nombre del usuario actual
+     * @return Nombre del userModel actual
+     */
+    String getCurrentUserModelName();
 }

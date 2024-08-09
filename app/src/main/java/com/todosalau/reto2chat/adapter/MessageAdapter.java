@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.todosalau.reto2chat.ChatActivity;
 import com.todosalau.reto2chat.R;
 import com.todosalau.reto2chat.model.MessageModel;
 
@@ -42,13 +44,21 @@ public class MessageAdapter extends ArrayAdapter<MessageModel> {
         // Obtener el mensaje actual en la posición especificada
         MessageModel currentMessage = mMessages.get(position);
 
+        //Linear layout para diferenciar mis chats
+        LinearLayout lytMsgCard =  listItem.findViewById(R.id.lytMsgCard);
+
         // Obtener referencias a los TextView en el layout del mensaje
         TextView senderNameTextView = listItem.findViewById(R.id.senderNameTextView);
         TextView messageTextView = listItem.findViewById(R.id.messageTextView);
         TextView timestampTextView = listItem.findViewById(R.id.timestampTextView);
+        if(currentMessage.getSenderEmail().equalsIgnoreCase(((ChatActivity) mContext).getCurrenUserMail())){
+            senderNameTextView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            messageTextView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            timestampTextView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+        }
 
         // Establecer los valores de los TextView con los datos del mensaje actual
-        senderNameTextView.setText(currentMessage.getSenderEmail());
+        senderNameTextView.setText(currentMessage.getSenderName());
         messageTextView.setText(currentMessage.getMessageText());
 
         // Formatear y establecer el timestamp en el TextView correspondiente
