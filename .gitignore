@@ -34,3 +34,5 @@ google-services.json
 local.properties
 gradle/libs.versions.toml
 gradle/libs.versions.toml
+gradle/libs.versions.toml
+local.properties
